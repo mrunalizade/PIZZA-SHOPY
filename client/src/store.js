@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import {thunk} from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { getAllPizzaReducer } from "./reducers/pizzaReducer";
-import { compose } from "redux";
 import store from "./store";
 
 const rootReducer = combineReducers({
@@ -12,7 +11,6 @@ const initialState = {};
 const middleware = [thunk];
 
 if (nodeEnv => 'production') {
-const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware)));
  } else{
     const store = createStore(
         rootReducer,

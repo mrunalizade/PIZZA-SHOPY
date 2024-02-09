@@ -1,5 +1,5 @@
 import "./App.css";
-
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TopBar from "./components/TopBar";
 import About from "./components/About";
