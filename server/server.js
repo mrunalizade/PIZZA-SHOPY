@@ -1,15 +1,14 @@
 const express = require("express");
-const dotenv = require('dotenv')
-const connectDB = require('./config/config')
+const dotenv = require("dotenv");
+const connectDB = require("./config/config");
 require("colors");
 const morgan = require("morgan");
 
-
 //config dotenv
-dotenv.config()
+dotenv.config();
 
 //connection mongodb
-connectDB()
+connectDB();
 
 const app = express();
 
@@ -18,12 +17,15 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //route
+app.use("/api/pizzas", require("./routes/pizzaRoute"));
 app.get("/", (req, res) => {
-    res.send("<h1>Hello From Node Server vai nodemon</h1>");
+  res.send("<h1>Hello From Node Server vai nodemon</h1>");
 });
 
-
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
-    console.log(`Server Runnign On ${process.env.NODE_ENV} mode on port no ${process.env.PORT}`.bgMagenta.white);
+  console.log(
+    `Server Runnign On ${process.env.NODE_ENV} mode on port no ${process.env.PORT}`
+      .bgMagenta.white
+  );
 });

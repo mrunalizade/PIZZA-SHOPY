@@ -8,6 +8,7 @@ import Policy from "./components/Policy";
 import NavBar from "./components/NavBar";
 import HomeScreen from "./screens/HomeScreen";
 
+
 function App() {
   return (
     <BrowserRouter>

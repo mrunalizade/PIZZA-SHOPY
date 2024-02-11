@@ -5,10 +5,8 @@ import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
-    <React.StrictMode>
+    <React.StrictMod>
     <App />
-    </React.StrictMode>,
+    </React.StrictMod>,
     document.getElementById("root")
 );
-
-
